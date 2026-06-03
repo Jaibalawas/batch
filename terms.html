@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms & Conditions — Idealfinway</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --bg:#04080f;
+  --border:rgba(255,255,255,0.08);
+  --green:#3bdb7a;
+  --green-dim:#22913f;
+  --gold:#f0b429;
+  --text:#f0f6ff;
+  --muted:rgba(200,215,240,0.55);
+}
+
+body{
+  font-family:'Sora',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+body::before{
+  content:'';
+  position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:0;
+}
+
+.blob{
+  position:fixed;border-radius:50%;filter:blur(140px);
+  pointer-events:none;z-index:0;
+}
+.blob-1{width:500px;height:500px;top:-150px;left:-100px;background:radial-gradient(circle,rgba(34,145,63,0.12) 0%,transparent 70%);}
+.blob-2{width:400px;height:400px;bottom:0;right:-100px;background:radial-gradient(circle,rgba(240,180,41,0.06) 0%,transparent 70%);}
+
+.page{
+  position:relative;z-index:1;
+  max-width:680px;
+  margin:0 auto;
+  padding:0 24px 80px;
+}
+
+/* NAV */
+nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:24px 0 48px;
+}
+
+.logo{
+  display:flex;align-items:center;gap:10px;
+  font-size:17px;font-weight:700;color:#fff;
+  text-decoration:none;
+}
+
+.logo-img-wrap{position:relative;width:52px;height:52px;flex-shrink:0;}
+.logo-img{width:52px;height:52px;object-fit:contain;position:relative;z-index:2;
+  
+  }
+@keyframes logo-breathe{
+  0%,100%{}
+  50%{filter:drop-shadow(0 0 14px rgba(60,160,255,0.9)) drop-shadow(0 0 32px rgba(30,120,255,0.5));}}
+.logo-glow{position:absolute;inset:-8px;background:radial-gradient(circle,rgba(30,100,255,0.2) 0%,transparent 70%);border-radius:50%;z-index:1;}
+.logo-wordmark{font-size:17px;font-weight:700;color:#fff;}
+.logo-wordmark .gold{color:var(--gold);}
+
+.back-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:13px;font-weight:600;color:var(--muted);
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--border);
+  padding:8px 14px;border-radius:20px;
+  text-decoration:none;
+  transition:color .2s,border-color .2s;
+}
+
+.back-btn:hover{color:var(--green);border-color:rgba(59,219,122,0.3);}
+
+/* HEADER */
+.doc-header{
+  margin-bottom:40px;
+  padding-bottom:28px;
+  border-bottom:1px solid var(--border);
+}
+
+.doc-header h1{
+  font-size:clamp(26px,6vw,38px);
+  font-weight:800;
+  letter-spacing:-0.5px;
+  margin-bottom:10px;
+}
+
+.doc-header h1 em{
+  font-style:normal;
+  background:linear-gradient(135deg,var(--green) 0%,#7ef7a0 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+.doc-header p{
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+/* CONTENT */
+.section{margin-bottom:36px;}
+
+.section h2{
+  font-size:16px;
+  font-weight:700;
+  color:#fff;
+  margin-bottom:12px;
+  padding-left:12px;
+  border-left:2px solid var(--green-dim);
+}
+
+.section p,
+.section li{
+  font-size:14px;
+  font-weight:300;
+  color:var(--muted);
+  line-height:1.85;
+}
+
+.section ul{
+  list-style:none;
+  padding-left:0;
+}
+
+.section ul li{
+  padding:4px 0 4px 18px;
+  position:relative;
+}
+
+.section ul li::before{
+  content:'';
+  position:absolute;left:0;top:13px;
+  width:6px;height:6px;
+  border-radius:50%;
+  background:var(--green-dim);
+}
+
+.highlight-box{
+  background:rgba(240,180,41,0.06);
+  border:1px solid rgba(240,180,41,0.15);
+  border-radius:12px;
+  padding:16px 18px;
+  margin-top:12px;
+  font-size:13px;
+  color:rgba(240,200,100,0.7);
+  line-height:1.7;
+  font-weight:400;
+}
+
+/* FOOTER */
+.footer{
+  margin-top:56px;
+  padding-top:24px;
+  border-top:1px solid var(--border);
+  text-align:center;
+  font-size:11px;
+  color:rgba(100,125,160,0.4);
+  line-height:2;
+}
+</style>
+</head>
+<body>
+
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+
+<div class="page">
+
+  <nav>
+    <div class="logo">
+      <div class="logo-img-wrap">
+        <img src="data:image/png;base64,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" alt="Idealfinway Logo" class="logo-img">
+        <div class="logo-glow"></div>
+      </div>
+      <span class="logo-wordmark">Ideal<span class="gold">Finway</span></span>
+    </div>
+    <a href="idealfinway_batch_en.html" class="back-btn">
+      ← Back to Registration
+    </a>
+  </nav>
+
+  <div class="doc-header">
+    <h1>Terms &amp; <em>Conditions</em></h1>
+    <p>Last updated: June 2025 &nbsp;·&nbsp; Idealfinway Stock Market Institute, Hisar, Haryana</p>
+  </div>
+
+  <div class="section">
+    <h2>1. About Idealfinway</h2>
+    <p>Idealfinway Stock Market Institute is an educational institution based in Hisar, Haryana, offering offline stock market training courses. Our branches operate in Hisar, Rohtak, Tohana, and Adampur Mandi. By submitting this registration form, you agree to be contacted by our team for counselling and course-related information.</p>
+  </div>
+
+  <div class="section">
+    <h2>2. Educational Purpose Only</h2>
+    <p>All content, courses, strategies, and information provided by Idealfinway — including the CPR Intraday Strategy — are strictly for <strong style="color:#fff;">educational and informational purposes only.</strong></p>
+    <div class="highlight-box">
+      ⚠️ Stock market investments involve significant financial risk. Past performance of any strategy is not indicative of future results. Idealfinway does not guarantee any profits or returns. Please consult a SEBI-registered financial advisor before making investment decisions.
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>3. Registration &amp; Counselling</h2>
+    <ul>
+      <li>Submitting this form is a request for a free counselling call only — it does not confirm your admission.</li>
+      <li>Our team will contact you within 2 hours of form submission on the WhatsApp number provided.</li>
+      <li>Admission to the offline batch is subject to seat availability and verification.</li>
+      <li>Idealfinway reserves the right to decline any registration without providing a reason.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>4. Data Privacy &amp; Usage</h2>
+    <ul>
+      <li>The personal information you provide (name, phone number, city) is collected solely for counselling and course communication purposes.</li>
+      <li>Your data will never be sold, rented, or shared with any third-party for commercial purposes.</li>
+      <li>By submitting this form, you consent to receive calls and WhatsApp messages from Idealfinway regarding the course.</li>
+      <li>You may opt out of communications at any time by informing our team.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>5. Course Fees &amp; Payments</h2>
+    <ul>
+      <li>Course fees will be communicated during the counselling call. No fees are collected through this registration form.</li>
+      <li>Fees once paid are non-refundable unless the batch is cancelled by Idealfinway.</li>
+      <li>Batch dates, timings, and fee structure are subject to change at the institute's discretion.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>6. Attendance &amp; Conduct</h2>
+    <ul>
+      <li>Students are expected to maintain a minimum of 75% attendance in the offline batch.</li>
+      <li>Disruptive or inappropriate behaviour may result in removal from the course without refund.</li>
+      <li>Course materials, strategies, and content are proprietary and may not be recorded, reproduced, or shared without written permission from Idealfinway.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>7. Limitation of Liability</h2>
+    <p>Idealfinway and its trainers shall not be held liable for any financial losses incurred by students as a result of applying the knowledge, strategies, or information learned in the course. All trading decisions are made solely at the student's own risk and discretion.</p>
+  </div>
+
+  <div class="section">
+    <h2>8. Intellectual Property</h2>
+    <p>All course content, study materials, strategies (including the CPR Intraday Strategy), and branding are the intellectual property of Idealfinway. Unauthorised reproduction or distribution is strictly prohibited.</p>
+  </div>
+
+  <div class="section">
+    <h2>9. Governing Law</h2>
+    <p>These terms are governed by the laws of India. Any disputes shall be subject to the jurisdiction of the courts in Hisar, Haryana.</p>
+  </div>
+
+  <div class="section">
+    <h2>10. Contact Us</h2>
+    <p>For any queries regarding these terms, please contact us:</p>
+    <ul>
+      <li>Institute: Idealfinway Stock Market Institute</li>
+      <li>Location: Hisar, Haryana, India</li>
+      <li>WhatsApp: +91-XXXXXXXXXX</li>
+      <li>Website: idealfinway.com</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    © 2025 Idealfinway Stock Market Institute. All rights reserved.<br>
+    Hisar · Rohtak · Tohana · Adampur Mandi<br>
+    <small>Stock market investments involve risk. Content is for educational purposes only.</small>
+  </div>
+
+</div>
+</body>
+</html>
