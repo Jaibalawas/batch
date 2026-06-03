@@ -305,11 +305,17 @@ h1 em{
   text-transform:none;letter-spacing:0;
 }
 .tc-label input[type=checkbox]{
-  width:16px;height:16px;flex-shrink:0;
-  margin-top:2px;accent-color:var(--green);cursor:pointer;
+  width:18px;height:18px;flex-shrink:0;
+  margin-top:2px;cursor:pointer;
+  accent-color:var(--green);
 }
 .tc-label a{color:var(--green);text-decoration:none;}
 .tc-label a:hover{text-decoration:underline;}
+.tc-error{
+  display:none;
+  font-size:11px;color:#f07070;
+  margin-top:6px;padding-left:28px;
+}
 
 .cta-btn{
   width:100%;
@@ -741,6 +747,7 @@ h1 em{
           <input type="checkbox" id="ftc">
           <span>I agree to the <a href="terms.html" target="_blank">Terms &amp; Conditions</a></span>
         </label>
+        <div class="tc-error" id="tcError">⚠️ Please agree to the Terms &amp; Conditions to continue.</div>
       </div>
 
       <button class="cta-btn" id="submitBtn" onclick="submitForm()">
@@ -827,14 +834,20 @@ function submitForm(){
   var occ    = document.getElementById('foccupation').value;
   var attendEl = document.querySelector('input[name="fattend"]:checked');
   var attend = attendEl ? attendEl.value : '';
-  var tc     = document.getElementById('ftc').checked;
+  var tc = document.getElementById('ftc').checked;
 
   if(!name){alert('Please enter your full name.');return;}
   if(!phone||phone.length!==10||isNaN(phone)){alert('Please enter a valid 10-digit WhatsApp number.');return;}
   if(!city){alert('Please enter your city.');return;}
   if(!occ){alert('Please tell us what you currently do.');return;}
   if(!attend){alert('Please tell us if you can attend the offline course.');return;}
-  if(!tc){alert('Please agree to the Terms & Conditions to proceed.');return;}
+  if(!tc){
+    var tcErr = document.getElementById('tcError');
+    tcErr.style.display = 'block';
+    tcErr.scrollIntoView({behavior:'smooth', block:'center'});
+    return;
+  }
+  document.getElementById('tcError').style.display = 'none';
 
   var btn=document.getElementById('submitBtn');
   btn.classList.add('loading');
@@ -869,6 +882,10 @@ function submitForm(){
 
 document.getElementById('fphone').addEventListener('input',function(){
   this.value=this.value.replace(/\D/g,'').slice(0,10);
+});
+
+document.getElementById('ftc').addEventListener('change',function(){
+  if(this.checked) document.getElementById('tcError').style.display='none';
 });
 
 if(typeof fbq!=='undefined'){
